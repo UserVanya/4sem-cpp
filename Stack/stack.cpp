@@ -1,4 +1,5 @@
 #ifdef _STACK_
+//need to add null ptr to element in destructor to prevent the repeat of implementation of ptr
 
 template <typename T>
 stack<T>::stack()
