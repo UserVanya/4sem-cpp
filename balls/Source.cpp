@@ -2,13 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include "MaterialPoint.h"
 
+
 int main(){
 	sf::RenderWindow window(sf::VideoMode(800, 400), "MyWindow");
 	
 	sf::Clock clock;
 	std::vector<MaterialPoint> mass;
 	while (window.isOpen()) {
-		float time = clock.getElapsedTime().asMicroseconds();
+		float time = (float)clock.getElapsedTime().asMicroseconds();
 		time /= 800;
 		clock.restart();
 		sf::Event event;
@@ -23,10 +24,12 @@ int main(){
 				}
 			}
 		}
-		
-		window.clear(sf::Color::Red);
 		for (int i = 0; i < (int)mass.size(); i++) {
 			mass[i].updatePosition(time, mass);
+		}
+		window.clear(sf::Color::Red);
+		for (int i = 0; i < (int)mass.size(); i++) {
+			
 			window.draw(mass[i].shape);
 		}
 		window.display();

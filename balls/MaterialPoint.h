@@ -5,11 +5,15 @@
 class MaterialPoint
 {
 public:
+	float size(const sf::Vector2f && v);
+	float size(const sf::Vector2f & v);
+	float product(const sf::Vector2f & first, const sf::Vector2f second);
+	sf::Vector2f norm(const sf::Vector2f && v);
+	sf::Vector2f norm(const sf::Vector2f & v);
+	void setImpulse(std::vector<MaterialPoint>& points, int i, int j);
 	MaterialPoint();
-	
 	~MaterialPoint();
-	void updatePosition(float dt, const std::vector<MaterialPoint>& points);
-	sf::Vector2f setImpulse() const;
+	void updatePosition(float dt, std::vector<MaterialPoint>& points);
 	sf::Vector2f position;
 	sf::Vector2f velocity;
 	sf::Vector2f acceleration;
@@ -17,10 +21,7 @@ public:
 	float radius;
 	bool isCreated;
 	sf::CircleShape shape;
-	float size(const sf::Vector2f& v);
 	MaterialPoint(const std::vector<MaterialPoint>& pointsAlreadyInWindow, const sf::RenderWindow& window);
 	bool oneOfPointsInThisOne(const std::vector<MaterialPoint>& pointsAlreadyInWindow);
-	float size(const sf::Vector2f&& v);
-	void getAcceleration(const std::vector<MaterialPoint>& points);
-
+	void getAcceleration(std::vector<MaterialPoint>& points);
 };
