@@ -1,0 +1,50 @@
+Пример 1
+
+Ввод:
+2
+aaaaaaaaaaaaa
+aaabbbaaabbba
+
+Вывод:
+6
+7
+aaa aaa 10
+aaa aab 2
+aab abb 2
+abb bbb 2
+bbb bba 2
+bba baa 1
+baa aaa 1
+
+////////////////////
+
+Пример 2
+
+Ввод:
+2
+abab
+baba
+
+Вывод:
+2
+2
+aba bab 1
+bab aba 1
+
+////////////////////
+
+Пример 3
+
+Ввод:
+1
+qwertyqwertyqwertyqwertyqwerty
+
+Вывод:
+6
+6
+qwe wer 5
+wer ert 5
+ert rty 5
+rty tyq 4
+tyq yqw 4
+yqw qwe 4
